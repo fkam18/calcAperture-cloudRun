@@ -4,4 +4,4 @@ steps:
 - name: 'gcr.io/cloud-builders/npm'
   args: ['test']
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['functions', 'deploy', 'cicdFunction_dev', ' --trigger-http', ' --runtime', 'nodejs10', ' --entry-point', 'helloWorld']
+  args: ['functions', 'deploy', 'cicdFunction_dev', '--trigger-http', '--runtime', 'nodejs10', '--entry-point', 'helloWorld']
