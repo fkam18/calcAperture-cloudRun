@@ -1,7 +1,9 @@
 steps:
-- name: ‘gcr.io/cloud-builders/npm’
+- name: ‘node'
+  entrypoint: 'npm'
   args: [‘install’]
-- name: ‘gcr.io/cloud-builders/npm’
+- name: 'node'
+  entrypoint: 'npm'
   args: [‘test’]
 - name: ‘gcr.io/cloud-builders/gcloud’
   args: [‘functions’, ‘deploy’, ‘cicdFunction_dev’, ‘ — trigger-http’, ‘ — runtime’, ‘nodejs10’, ‘ — entry-point’, ‘helloWorld’]
