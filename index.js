@@ -1,10 +1,14 @@
-/**
-* Responds to any HTTP request.
-*
-* @param {!express:Request} req HTTP request context.
-* @param {!express:Response} res HTTP response context.
-*/
-exports.helloWorld = (req, res) => {
-  let message = req.query.message || req.body.message || "test 3";
-  res.status(200).send(message);
+exports.calcAperture = async (req, res) => {
+ try {
+   var t = parseFloat(req.body.t);
+   var l = parseFloat(req.body.l);
+   var iso = parseFloat(req.body.iso);
+   var n = Math.sqrt( (((l*iso)/12.5)*t)  )/5;
+   var aperture = n.toFixed(1);
+   res.status(200).send(aperture);
+ } catch (error) {
+   //return an error
+   res.status(500).send(error);
+ }
 };
+

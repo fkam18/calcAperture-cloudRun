@@ -1,3 +1,13 @@
+220116 fkam: 
+local ubuntu test
+https://github.com/GoogleCloudPlatform/functions-framework-nodejs
+https://codelabs.developers.google.com/codelabs/local-development-with-cloud-functions#3	
+
+To run use npx, instead of node ...
+npx @google-cloud/functions-framework --target=validateTemperature
+curl -X POST http://localhost:8080 -H "Content-Type:application/json"  -d '{"temp":"50"}'
+
+220101 fkam:
 Based on: https://dents0.medium.com/ci-cd-for-gcp-cloud-functions-f46314f363
 Allow public access to the cloud function: Permission-> Add -> Principal=allUsers, Role = Cloud Function -> Cloud Function Invokers
 
